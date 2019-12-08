@@ -28,6 +28,7 @@ class FunDogFacts::CLI
     puts "5. Fun facts are fun!"
     puts ""
     
+    @facts = FunDogFacts::Facts.all
   end
   
   def fun_fact
@@ -59,6 +60,7 @@ class FunDogFacts::CLI
     puts ""
     puts "*************************************************"
     puts "We hope you have a PAWSITIVELY awesome day! Bye!"
+    puts "*************************************************"
   end
   
 end 
