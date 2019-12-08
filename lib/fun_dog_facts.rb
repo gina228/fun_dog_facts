@@ -1,6 +1,2 @@
-require "fun_dog_facts/version"
-
-module FunDogFacts
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./fun_dog_facts/version"
+require_relative "./fun_dog_facts/cli"

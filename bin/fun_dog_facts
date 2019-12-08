@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/fun_dog_facts'
+
 FunDogFacts::CLI.new.call
