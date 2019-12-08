@@ -28,13 +28,14 @@ class FunDogFacts::CLI
     puts "5. Fun facts are fun!"
     puts ""
     
-    @facts = FunDogFacts::Facts.all
+    @fun_fact = FunDogFacts::Facts.all
   end
   
   def fun_fact
     input = nil 
     while input != "exit"
       input = gets.strip.downcase
+      if input.to_1 > 0
       case input
       when "1"
         puts ""
@@ -59,7 +60,7 @@ class FunDogFacts::CLI
   def goodbye
     puts ""
     puts "*************************************************"
-    puts "We hope you have a PAWSITIVELY awesome day! Bye!"
+    puts "We hope you have a PAW-sitively awesome day! Bye!"
     puts "*************************************************"
   end
   

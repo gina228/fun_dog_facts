@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
-require './lib/fun_dog_facts'
+#require './lib/fun_dog_facts'
+
+require "bundler/setup"
+require "fun_dog_facts"
 
 FunDogFacts::CLI.new.call
