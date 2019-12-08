@@ -10,7 +10,12 @@ class FunDogFacts::CLI
   end
   
   def welcome
+    puts ""
+    puts "*******************************************************************************"
+    puts ""
     puts "Welcome to the Fun Dog Facts CLI gem! Get ready to learn some cool stuff about our doggo friends, no matter how smol or large!"
+    puts ""
+    puts "*******************************************************************************"
   end
   
   def list_fact_titles
@@ -44,11 +49,15 @@ class FunDogFacts::CLI
         list_fact_titles
       when "exit"
         goodbye
+      else
+        puts "ARF! Please try again!"
       end
     end
   end
   
   def goodbye
+    puts ""
+    puts "*************************************************"
     puts "We hope you have a PAWSITIVELY awesome day! Bye!"
   end
   
