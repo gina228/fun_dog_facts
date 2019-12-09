@@ -19,7 +19,7 @@ class FunDogFacts::CLI
   end
   
   def list_facts
-    @facts = FunDogFacts::Facts.today
+    @facts = FunDogFacts::Facts.fun_fact
     @facts.each.with_index(1) do |fun_fact, i|
       puts "#{i}. #{fun_fact}"
     end
