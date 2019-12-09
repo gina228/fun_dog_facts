@@ -7,6 +7,7 @@ class FunDogFacts::CLI
     puts ""
     list_facts
     fact_info
+    goodbye
   end
   
   def welcome
@@ -19,9 +20,9 @@ class FunDogFacts::CLI
   end
   
   def list_facts
-    @facts = FunDogFacts::Facts.fun_fact
-    @facts.each.with_index(1) do |fun_fact, i|
-      puts "#{i}. #{fun_fact}"
+    @facts = FunDogFacts::Facts.fun
+    @facts.each.with_index(1) do |fact, i|
+      puts "#{i}. #{fact.fun_fact}"
     end
   end
   
@@ -33,8 +34,8 @@ class FunDogFacts::CLI
     
       input = gets.strip.downcase
       if input.to_i > 0
-        the_deal = @facts[input.to_i-1]
-        puts "#{more_info}"
+        the_facts = @facts[input.to_i-1]
+        puts "#{the_facts.more_info}"
       elsif input == "list"
         list_facts
       else
