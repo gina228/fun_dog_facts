@@ -5,8 +5,8 @@ class FunDogFacts::CLI
   def call
     welcome
     puts ""
-    list_fact_titles
-    fun_fact
+    list_facts
+    fact_info
   end
   
   def welcome
@@ -18,42 +18,25 @@ class FunDogFacts::CLI
     puts "*******************************************************************************"
   end
   
-  def list_fact_titles
-    puts "Type in a number that corresponds with a surprise fun fact you want to see, type 'list' to get back to the list of facts at any time, OR type 'exit' to leave the program"
-    puts ""
-    puts "1. A fun fact!"
-    puts ""
-    puts "2. Another fun fact!"
-    puts ""
-    puts "3. Yet another fun fact!"
-    puts ""
-    puts "4. Oh look, a fun fact!"
-    puts ""
-    puts "5. Fun facts are fun!"
-    puts ""
-    
-    @fun_fact = FunDogFacts::Facts.all
+  def list_facts
+    @facts = FunDogFacts::Facts.today
+    @facts.each.with_index(1) do |fun_fact, i|
+      puts "#{i}. #{fun_fact}"
+    end
   end
   
-  def fun_fact
+  def fact_info
+    
     input = nil 
     while input != "exit"
+      puts "Type in a number that corresponds with a fun fact you want more info on, type 'list' to get back to the list of facts at any time, OR type 'exit' to leave the program"
+    
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts ""
-      when "2"
-        puts ""
-      when "3"
-        puts ""
-      when "4"
-        puts ""
-      when "5"
-        puts ""
-      when "list"
-        list_fact_titles
-      when "exit"
-        goodbye
+      if input.to_i > 0
+        the_deal = @facts[input.to_i-1]
+        puts "#{more_info}"
+      elsif input == "list"
+        list_facts
       else
         puts "ARF! Please try again!"
       end
