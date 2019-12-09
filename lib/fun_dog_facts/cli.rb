@@ -22,9 +22,13 @@ class FunDogFacts::CLI
     puts "Type in a number that corresponds with a surprise fun fact you want to see, type 'list' to get back to the list of facts at any time, OR type 'exit' to leave the program"
     puts ""
     puts "1. A fun fact!"
+    puts ""
     puts "2. Another fun fact!"
+    puts ""
     puts "3. Yet another fun fact!"
+    puts ""
     puts "4. Oh look, a fun fact!"
+    puts ""
     puts "5. Fun facts are fun!"
     puts ""
     
@@ -35,7 +39,6 @@ class FunDogFacts::CLI
     input = nil 
     while input != "exit"
       input = gets.strip.downcase
-      if input.to_1 > 0
       case input
       when "1"
         puts ""
